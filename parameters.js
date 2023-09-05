@@ -28,4 +28,25 @@ console.log(paramFunc3());
 // ----------------------------
 //   ---- Rest Operator ----
 // ---------------------------
+// looks like the spread operator but in the parameters
+// it will take any amount of passed arguements into the parameters and puts them in an array.
+
+// const restOperator = (...params) => {
+//     return params.join(' ')
+// }
+
+const restOperator2 = (param1, param2, ...params) => {
+    return param1 + ' ' + param2 + ' ' + params.join(' ')
+}
+
+// console.log('!@-------2 params-------@!')
+// console.log(restOperator("Hello", "World"))
+// console.log('!@-------3 params-------@!')
+// console.log(restOperator("Hello", "Your", "World"))
+console.log('!@-------3 params-------@!')
+console.log(restOperator2("Hello", "Your", "World", "Is", "Really", "Awesome"))
+
+
+
+
 
