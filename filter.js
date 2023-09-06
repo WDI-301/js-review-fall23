@@ -13,11 +13,24 @@ let myArr = arrMaker(1,15,1)
 console.log(myArr)
 
 //Filter: manual version
-let newArr = new Array
-for (let index = 0; index < myArr.length; index++) {
-    const element = myArr[index];
-    if (element === 5) {
-        newArr.push(element)
+// let newArr = new Array
+// for (let index = 0; index < myArr.length; index++) {
+//     const element = myArr[index];
+//     if (element === 5 ) {
+//         newArr.push(element)
+//     }
+// }
+// console.log(newArr);
+
+// Filter: Callback Version
+const filterFunc = (array, callback) => {
+    let returnArr = []
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (callback) {
+            returnArr.push(element)
+        }
     }
+    return returnArr
 }
-console.log(newArr);
+
