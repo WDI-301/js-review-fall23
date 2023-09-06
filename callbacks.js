@@ -45,26 +45,39 @@ let myArr = [1,2,3,4,5]
 
 //create map function
 
-const myMapper = () => {  //fill in the params
+const myMapper = (array, callback, unicorn) => {  //fill in the params
 
     let returnArr = new Array  // = []
 
     //For loop
     // 1) iterate through the original Array passed in the params
     // 2) apply a callback to each element of the array
-
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index]; 
+        returnArr.push(callback(element, unicorn))
+    }
 
     //retrun the new Array
-
+    return returnArr
 }
 
-const myNewArr = myMapper(myArr, ((element) => element + 1))
+// const myNewArr = myMapper(myArr, (
+//     (element) => {
+//     return element + 1
+// }))
+
+const myNewArr = myMapper(myArr, (element => element + 1))
 console.log('!@-------MyMapper-------@!')
 console.log(myNewArr) // [2,3,4,5,6]
 
 // bonus
 // can you modify your functino so that the folowing works
-const myBonusArr = myMapper(myArr, add, 1)
+// const myBonusArr = myMapper(myArr, add)
+// console.log('!@-------BonusArr-------@!')
+// console.log(myBonusArr) // [2,3,4,5,6]
+const myBonusArr = myMapper(myArr, add, 2)
 console.log('!@-------BonusArr-------@!')
-console.log(myBonusArr) // [2,3,4,5,6]
+console.log(myBonusArr) // [3,4,5,6,7]
+
+
 
