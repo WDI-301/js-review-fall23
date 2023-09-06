@@ -62,3 +62,9 @@ const myNewArr = myMapper(myArr, ((element) => element + 1))
 console.log('!@-------MyMapper-------@!')
 console.log(myNewArr) // [2,3,4,5,6]
 
+// bonus
+// can you modify your functino so that the folowing works
+const myBonusArr = myMapper(myArr, add, 1)
+console.log('!@-------BonusArr-------@!')
+console.log(myBonusArr) // [2,3,4,5,6]
+
