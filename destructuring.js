@@ -128,17 +128,27 @@ const objMaker = (arr) => {
 // console.log(objMaker(things)) //works
 // console.log(objMaker(movies)) //doesn't work
 
-const thingMaker = () => {
+const thingMaker = (name, type, age) => {
     // returns object for pets and things
+    return {
+        name: name,
+        type: type,
+        age: age
+    }
 
 }
 
-const movieMaker = () => {
+const movieMaker = (title, director, year, rating) => {
     // returns object for movies
-
+    return {
+        title: title,
+        director: director,
+        year: year,
+        rating: rating
+    }
 }
 
-const breakerFunc = () => {
+const breakerFunc = (arr, indexLength, callback) => {
     // function is for breaking up the array into defined lengths (from the params)
     // and uses the Maker callbacks to create an object out of that
 
