@@ -32,7 +32,7 @@ const nameAdder = (name, obj) => {
     }
 
 }
-console.log(nameAdder('Alpha', alpha))
+// console.log(nameAdder('Alpha', alpha))
 
 //----- API Examnples --------
 let username = {
@@ -55,8 +55,8 @@ const combineAPI = (username, post) => {
         ...post
     }
 }
-console.log('!@-------combineAPI-------@!')
-console.log(combineAPI(username, post))
+// console.log('!@-------combineAPI-------@!')
+// console.log(combineAPI(username, post))
 
 const makePost = (username, post) => {
     return {
@@ -66,8 +66,8 @@ const makePost = (username, post) => {
     }
 }
 
-console.log('!@-------makePost-------@!')
-console.log(makePost(username, post))
+// console.log('!@-------makePost-------@!')
+// console.log(makePost(username, post))
 
 
 // ----- Creating Objects from Arrays
@@ -103,10 +103,56 @@ let movies = [
 //     age: 3
 // }
 
-const objMaker = () => {
+const objMaker = (arr) => {
+
+    let returnArr = new Array
     
+    // loop to break up the array into lengths of 3
+    for (let index = 0; index < arr.length; index= index+3) {
+
+        // create a new object out of the parts of the array
+        returnArr.push({
+            name: arr[index],
+            type: arr[index+1],
+            age: arr[index+2]
+        })
+        
+    }  
+    // return the new array of objects 
+    return returnArr
 }
 
-// both should work
-console.log(objMaker(pets))
-console.log(objMaker(things))
+
+// // both should work
+// console.log(objMaker(pets)) //works
+// console.log(objMaker(things)) //works
+// console.log(objMaker(movies)) //doesn't work
+
+const thingMaker = () => {
+    // returns object for pets and things
+
+}
+
+const movieMaker = () => {
+    // returns object for movies
+
+}
+
+const breakerFunc = () => {
+    // function is for breaking up the array into defined lengths (from the params)
+    // and uses the Maker callbacks to create an object out of that
+
+    let returnArr = []
+
+    // loop to break up the array into lengths of parameter
+
+     // create a new object, using the callback, out of the parts of the array
+
+
+     //return the array of objects
+     return returnArr
+}
+
+console.log(breakerFunc(pets, 3, thingMaker));
+console.log(breakerFunc(things, 3, thingMaker));
+console.log(breakerFunc(movies, 4, movieMaker));
