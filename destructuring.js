@@ -201,6 +201,13 @@ const objectMaker = (keyNames, values) => {
     // values=['Mr. Bigglesworth','Cat',3,]
     let returnObj = new Object
     // loop version
+    for (let index = 0; index < keyNames.length; index++) {
+        returnObj = {
+            ...returnObj,
+            [keyNames[index]]: values[index]
+           }
+        
+    }
 
 
     // method version
@@ -214,18 +221,28 @@ const breakerArrayFunc = (arr, callback) => {
     
     //find the indexLength using null
     let indexLength = arr.indexOf(null)
-    console.log(indexLength)
+    // console.log(indexLength)
 
     //Version 1
     // Array of Keynames
+    let keyNames = arr.slice(0, indexLength)
+    // console.log(keyNames)
 
     // Array of Values
+    let valuesArr = arr.slice(indexLength+1)
+    // console.log(valuesArr);
 
     // loop through the values array iterating by indexLength, and send to the callback
     // sends both:
     // 1) keyNames
     // 2) section of array from index to indexLength
 
+    // if not using valueArr
+    // for (let index = indexLength+1; index < arr.length; index+=indexLength) {
+
+    for (let index = 0; index < valuesArr.length; index+=indexLength) {
+        returnArr.push(callback(keyNames, valuesArr.slice(index, index+indexLength)))
+    }
 
     // Version 2
     // same results with just a single loop
