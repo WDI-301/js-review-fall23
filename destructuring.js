@@ -154,10 +154,12 @@ const breakerFunc = (arr, indexLength, callback) => {
 
     let returnArr = []
 
-    // loop to break up the array into lengths of parameter
+    // loop to break up the array into lengths of parameter indexLength
+    for (let index = 0; index < arr.length; index = index + indexLength) {
 
-     // create a new object, using the callback, out of the parts of the array
-
+        // create a new object, using the callback, out of the parts of the array 
+        returnArr.push(callback(...arr.slice(index, index+indexLength)))  
+    }
 
      //return the array of objects
      return returnArr
