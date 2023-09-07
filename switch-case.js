@@ -44,3 +44,10 @@ const fizzBuzzSwitch = (arr) => {
 }
 
 console.log(fizzBuzzSwitch(myArr))
+
+// ---- Fruit Challenge ----
+
+let fruitArr = ["Banana", "Orange", "Avacado","Pear","Apple", "Mango", "Kiwi"]; 
+// make a switch statement that returns four, five or six for number of letters in the word,
+// or the original element if it does not match these lengths
+// ['Six', 'Six', 'Avacado', 'Four', 'Five, 'Five', 'Four']
