@@ -165,6 +165,77 @@ const breakerFunc = (arr, indexLength, callback) => {
      return returnArr
 }
 
-console.log(breakerFunc(pets, 3, thingMaker));
-console.log(breakerFunc(things, 3, thingMaker));
-console.log(breakerFunc(movies, 4, movieMaker));
+// console.log(breakerFunc(pets, 3, thingMaker));
+// console.log(breakerFunc(things, 3, thingMaker));
+// console.log(breakerFunc(movies, 4, movieMaker));
+
+//----CSV-----
+
+let petsCSV = [
+    'Name','Species', 'Age', null, 
+    'Mr. Bigglesworth','Cat',3,
+    'Raphael','Turtle',15,
+    'Dug','Dog',5,
+    'Nymeria','Direwolf',7,
+    'Toothless','Dragon',21  
+]
+let thingsCSV = [
+    'Name','Type', 'Age', null, 
+    'Herbie','VW Bug',50,
+    'Hubble','Telescope',30,
+    'GPS','Satellite',45,
+    'Titan','Moon',4000000000,
+    'Empire State Building','Skyscraper',70
+]
+let moviesCSV = [ 
+    'Title', 'Director', 'Year',  'Rating', null, 
+    'Everything, Everywhere, All at Once', 'The Daniels', 2022, 10,
+    'Dune', 'Denis Villeneuve', 2021, 8,
+    'Blade Runner 2049', 'Denis Villeneuve', 2019, 9
+]
+
+
+const objectMaker = (keyNames, values) => {
+    // parameters:
+    // keyNames = ['Name','Species', 'Age']
+    // values=['Mr. Bigglesworth','Cat',3,]
+    let returnObj = new Object
+    // loop version
+
+
+    // method version
+
+    return returnObj
+
+}
+
+const breakerArrayFunc = (arr, callback) => {
+    let returnArr = new Array
+    
+    //find the indexLength using null
+    let indexLength = arr.indexOf(null)
+    console.log(indexLength)
+
+    //Version 1
+    // Array of Keynames
+
+    // Array of Values
+
+    // loop through the values array iterating by indexLength, and send to the callback
+    // sends both:
+    // 1) keyNames
+    // 2) section of array from index to indexLength
+
+
+    // Version 2
+    // same results with just a single loop
+
+
+    return returnArr
+
+}
+
+
+console.log(breakerArrayFunc(petsCSV, objectMaker))
+console.log(breakerArrayFunc(thingsCSV, objectMaker))
+console.log(breakerArrayFunc(moviesCSV, objectMaker))
